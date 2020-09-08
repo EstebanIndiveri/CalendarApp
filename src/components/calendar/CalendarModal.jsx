@@ -55,7 +55,7 @@ const CalendarModal = () => {
     }
     const closeModal =()=>{
         // console.log('close');
-        
+        //close modal with
     }
   
 
@@ -65,8 +65,6 @@ const CalendarModal = () => {
         const momentEnd = moment( end );
 
         if ( momentStart.isSameOrAfter( momentEnd ) ) {
-        console.log('seaaaaaaaaaaaaand');
-
             return Swal.fire('Error','La fecha fin debe de ser mayor a la fecha de inicio', 'error');
         }
         if(title.trim().length<2){
