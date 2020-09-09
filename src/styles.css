@@ -61,3 +61,23 @@ html,body{
 .react-datetime-picker__wrapper{
     border:0px solid gray !important;
 }
+
+/*fab*/
+
+.fab{
+    border-radius: 100%;
+    bottom:25px;
+    font-size: 20px;
+    padding:15px;
+    position:fixed;
+    right: 25px;
+    transition: all .3s ease-in-out;
+
+}
+.fab:hover{
+    box-shadow: 2px 2px 10px 2px #a0a0a0;
+}
+.fab:focus{
+    box-shadow: none !important;
+    outline: none !important;
+}
