@@ -11,14 +11,14 @@ export const LoginScreen = () => {
                         <div className="form-group">
                             <input 
                                 type="text"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Correo"
                             />
                         </div>
                         <div className="form-group">
                             <input
                                 type="password"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Contraseña"
                             />
                         </div>
@@ -38,21 +38,21 @@ export const LoginScreen = () => {
                         <div className="form-group">
                             <input
                                 type="text"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Nombre"
                             />
                         </div>
                         <div className="form-group">
                             <input
                                 type="email"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Correo"
                             />
                         </div>
                         <div className="form-group">
                             <input
                                 type="password"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Contraseña" 
                             />
                         </div>
@@ -60,7 +60,7 @@ export const LoginScreen = () => {
                         <div className="form-group">
                             <input
                                 type="password"
-                                className="form-control"
+                                className="form-control m-1"
                                 placeholder="Repita la contraseña" 
                             />
                         </div>
