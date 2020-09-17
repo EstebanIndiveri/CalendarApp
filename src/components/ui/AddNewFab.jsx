@@ -10,7 +10,7 @@ const AddNewFab = () => {
     }
 
     return ( 
-        <button className="btn btn-primary fab" onClick={handleClick}>
+        <button className="btn btn-secondary fab" onClick={handleClick}>
             <i className="fas fa-plus"></i>
         </button> 
     );
