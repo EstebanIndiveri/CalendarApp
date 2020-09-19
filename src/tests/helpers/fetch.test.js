@@ -21,6 +21,7 @@ describe('pruebas en helper fetch', () => {
       const body=await resp.json();
     // console.log(body);
       expect(body.msg).toBe('hable con el admin');
+      
     });
     
     
