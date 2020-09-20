@@ -7,7 +7,7 @@ import { eventLogout } from "./events";
 export const startLogin=(email,password)=>{
     return async(dispatch)=>{
         if(validateEmail(email)){
-            // validateColor('#customEmail','is-valid');
+            validateColor('#customEmail','is-valid');
             const resp=await fetchSinToken('auth',{email,password},'POST');
             const body=await resp.json();
 
@@ -22,7 +22,7 @@ export const startLogin=(email,password)=>{
 
         }else{
             Swal.fire('Error','Correo electronico invalido','error');
-            // validateColor('#customEmail','is-invalid');
+            validateColor('#customEmail','is-invalid');
         }
 
     }
