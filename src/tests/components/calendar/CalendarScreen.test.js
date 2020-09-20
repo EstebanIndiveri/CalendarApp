@@ -5,10 +5,16 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import '@testing-library/jest-dom';
 import CalendarScreen from '../../../components/calendar/CalendarScreen';
+import { messages } from '../../../helpers/calendar-messages';
+import { types } from '../../../types/types';
+import { eventSetActive } from '../../../actions/events';
 
-// jest.mock('../../../actions/events',()=>({
-//     eventStartDelete:jest.fn()
-// }))
+jest.mock('../../../actions/events',()=>({
+    eventSetActive:jest.fn(),
+    eventStartLoading:jest.fn()
+}))
+
+Storage.prototype.setItem=jest.fn();
 
 const middlewares=[thunk];
 const mockStore=configureStore(middlewares);
@@ -41,11 +47,26 @@ const wrapper=mount(
 describe('prueba en CalendarScreen/>', () => {
     test('match snapshot', () => {
         expect(wrapper).toMatchSnapshot();
-    })
+    });
 
     test('interacciones con calendar', () => {
-        
+       const calendar=wrapper.find('Calendar');
+       const calendarmsg=calendar.prop('messages');
+       expect(calendarmsg).toEqual(messages)
+
+       calendar.prop('onDoubleClickEvent')();
+       expect(store.dispatch).toHaveBeenCalledWith({type:types.uiOpenModal})
+
+       calendar.prop('onSelectEvent')({start:'Hola'});
+        expect(eventSetActive).toHaveBeenCalledWith({start:'Hola'})
+
+       calendar.prop('onView')('week');
+       expect(localStorage.setItem).toHaveBeenCalledWith('lastView','week');
+
+
     })
+    
+  
     
     
 })
