@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../ui/Navbar'
 import {Calendar,momentLocalizer} from 'react-big-calendar'
-import moment from 'moment'
+import moment, { months } from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { messages } from '../../helpers/calendar-messages'
 import 'moment/locale/es'
@@ -32,7 +32,7 @@ const CalendarScreen = () => {
     //store los eventos
     const {events,activeEvent} = useSelector(state => state.calendar)
     const {uid} = useSelector(state => state.auth);
-    const [lastView, setLastView] = useState(localStorage.getItem('lastView')||'month');
+    const [lastView, setLastView] = useState(localStorage.getItem('lastView')|| 'month');
 
 
     useEffect(()=>{
@@ -92,6 +92,7 @@ const CalendarScreen = () => {
                 onDoubleClickEvent={onDoubleClick}
                 onSelectEvent={onSelectEvent}
                 onView={onViewChange}
+                // views={{week:true,month:true,agenda:false}}
                 view={lastView}
                 onSelectSlot={onSelectedSlot}
                 selectable={true}
